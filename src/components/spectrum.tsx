@@ -10,10 +10,10 @@ type IProps = {
   }
 }
 
-const GitHubIcon: React.FC<IProps> = () => {
+const SpectrumIcon: React.FC<IProps> = () => {
   const data = useStaticQuery(graphql`
-    query GitHubIconnQuery {
-      icon: file(absolutePath: { regex: "/GitHub-Mark-120px-plus.png/" }) {
+    query SpectrumIconQuery {
+      icon: file(absolutePath: { regex: "/spectrum.png/" }) {
         childImageSharp {
           fixed(width: 60, height: 60) {
             ...GatsbyImageSharpFixed
@@ -23,7 +23,7 @@ const GitHubIcon: React.FC<IProps> = () => {
     }
   `)
 
-  return <Image fixed={data.icon.childImageSharp.fixed} alt={"GitHub"} />
+  return <Image fixed={data.icon.childImageSharp.fixed} alt={"Spectrum"} />
 }
 
-export default GitHubIcon
+export default SpectrumIcon
