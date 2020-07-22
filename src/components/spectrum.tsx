@@ -1,16 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image, { FixedObject } from "gatsby-image"
+import Image from "gatsby-image"
 
-type IProps = {
-  icon: {
-    childImageSharp: {
-      fixed: FixedObject
-    }
-  }
-}
-
-const SpectrumIcon: React.FC<IProps> = () => {
+const SpectrumIcon = () => {
   const data = useStaticQuery(graphql`
     query SpectrumIconQuery {
       icon: file(absolutePath: { regex: "/spectrum.png/" }) {

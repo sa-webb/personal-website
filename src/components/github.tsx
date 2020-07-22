@@ -2,15 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image, { FixedObject } from "gatsby-image"
 
-type IProps = {
-  icon: {
-    childImageSharp: {
-      fixed: FixedObject
-    }
-  }
-}
-
-const GitHubIcon: React.FC<IProps> = () => {
+const GitHubIcon = () => {
   const data = useStaticQuery(graphql`
     query GitHubIconnQuery {
       icon: file(absolutePath: { regex: "/GitHub-Mark-120px-plus.png/" }) {
