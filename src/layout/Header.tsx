@@ -5,6 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar"
 
 import AppBarCollapse from "./AppBarCollapse"
 import Link from "../components/link"
+import Typography from "@material-ui/core/Typography"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -12,11 +13,15 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
+    color: `#fff`,
   },
   appbar: {
     flex: 1,
     padding: "0 30px",
     background: "transparent",
+    boxShadow: 'none'
+  },
+  link: {
     boxShadow: 'none'
   }
 }))
@@ -31,15 +36,16 @@ const Header: React.FC<IProps> = ({ siteTitle }) => {
   return (
     <AppBar position="static" className={classes.appbar}>
       <Toolbar>
-        <Link
-          underline="none"
+        <Link underline="none" to="/" className={classes.link}>
+        <Typography
           component="h2"
           variant="h4"
           color="inherit"
           className={classes.title}
-          to="/"
+          
         >
           {siteTitle}
+        </Typography>
         </Link>
         <AppBarCollapse />
       </Toolbar>
