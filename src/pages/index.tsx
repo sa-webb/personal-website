@@ -167,7 +167,7 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
           </Grid>
         </Container>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
