@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
   },
   footer: {
-    padding: theme.spacing(1),
+    padding: theme.spacing(2),
     marginTop: "auto",
     // backgroundColor: "white",
   },
