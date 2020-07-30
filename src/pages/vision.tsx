@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     paddingTop: "10em",
   },
   opac: {
-    height: "18vh",
+    height: "22vh",
     backgroundColor: `rgba(0, 0, 0, 0.5)`,
     color: `#fff`,
     marginLeft: "auto",
