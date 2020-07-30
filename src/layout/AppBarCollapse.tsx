@@ -23,8 +23,11 @@ const useStyles = makeStyles(theme => ({
   link: {
     margin: theme.spacing(1, 1.5),
     textDecoration: 'none',
-    boxShadow: 'none'
+    boxShadow: 'none',
   },
+  test: {
+    backgroundColor: 'transparent'
+  }
 }))
 
 const AppBarCollapse = () => {
@@ -32,20 +35,20 @@ const AppBarCollapse = () => {
   return (
     <div className={classes.root}>
       <ButtonAppBarCollapse>
-        <MenuItem>
+        <MenuItem className={classes.test}>
           <Link
             data-testid="about-link"
-            to="/"
+            to="/blog"
             color="textPrimary"
             className={classes.link}
           >
             Blog
           </Link>
           </MenuItem>
-          <MenuItem>
+          <MenuItem className={classes.test}>
           <Link
             data-testid="about-link"
-            to="/"
+            to="/mission"
             color="textPrimary"
             className={classes.link}
           >
@@ -55,7 +58,7 @@ const AppBarCollapse = () => {
         <MenuItem>
           <Link
             data-testid="about-link"
-            to="/about"
+            to="/vision"
             color="textPrimary"
             className={classes.link}
           >
@@ -65,11 +68,11 @@ const AppBarCollapse = () => {
         <MenuItem>
           <Link
             data-testid="about-link"
-            to="/contact"
+            to="/about"
             color="textPrimary"
             className={classes.link}
           >
-            Blog
+            About
           </Link>
         </MenuItem>
       </ButtonAppBarCollapse>
