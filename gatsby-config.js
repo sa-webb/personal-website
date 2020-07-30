@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Austin Webb`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `sa-webb`,
+      summary: `web dev specializing in React`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
@@ -24,6 +24,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/bio`,
+        name: `bio`,
       },
     },
     {
@@ -53,7 +60,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-173094763-1`,
       },
     },
     `gatsby-plugin-feed`,
@@ -66,7 +73,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `src/images/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
