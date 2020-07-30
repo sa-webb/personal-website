@@ -72,9 +72,7 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
 
   return (
     <>
-      <SEO title="Austin Webb" />
-
-      {/* <div style={{ backgroundColor: "black" }}> */}
+      <SEO title="Profile" />
       <ParticlesBG />
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>
@@ -170,7 +168,6 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
         </Container>
       </main>
       {/* <Footer /> */}
-      {/* </div> */}
     </>
   )
 }
