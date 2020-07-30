@@ -7,7 +7,7 @@ const SpectrumIcon = () => {
     query SpectrumIconQuery {
       icon: file(absolutePath: { regex: "/spectrum.png/" }) {
         childImageSharp {
-          fixed(width: 60, height: 60) {
+          fixed(width: 70, height: 70) {
             ...GatsbyImageSharpFixed
           }
         }
