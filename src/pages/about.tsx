@@ -47,7 +47,7 @@ const BlogPage = () => {
             {" "}
             I am a jovial spirit with an apt for problem solving. I fell into
             Computer Science by accident, despite loving computers my entire
-            life. Fortunately, destiny works in mystery ways.
+            life. Fortunately, destiny works in mysterious ways.
           </Typography>
         </Grid>
       </Container>
