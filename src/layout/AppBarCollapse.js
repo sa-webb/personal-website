@@ -94,7 +94,7 @@ function AppBarCollapse() {
           <Link
             variant="button"
             color="inherit"
-            href="/"
+            to="/"
             className={classes.link}
           >
             Education
