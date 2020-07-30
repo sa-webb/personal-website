@@ -6,7 +6,7 @@ import Link from "@material-ui/core/Link"
 
 const Copyright = () => {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography variant="body2" align="center" style={{color: `#fff`}}>
         © sa-webb
     </Typography>
   )
@@ -18,9 +18,9 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
   },
   footer: {
-    padding: theme.spacing(4),
+    padding: theme.spacing(1),
     marginTop: "auto",
-    backgroundColor: "white",
+    // backgroundColor: "white",
   },
 }))
 
