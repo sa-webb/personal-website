@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { makeStyles } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
@@ -44,17 +43,13 @@ const Header = ({ siteTitle }) => {
   return (
     <AppBar position="static" className={classes.appbar}>
       <Toolbar>
-        <Link underline="none" component="h2" variant="h4"  color="inherit" className={classes.title}>
+        <Link underline="none" component="h2" variant="h4"  color="inherit" className={classes.title} to='/'>
             {siteTitle}
         </Link>
         <AppBarCollapse />
       </Toolbar>
     </AppBar>
   )
-}
-
-AppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
 }
 
 export default Header
