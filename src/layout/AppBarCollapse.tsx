@@ -27,19 +27,19 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function AppBarCollapse() {
+const AppBarCollapse = () => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
       <ButtonAppBarCollapse>
-        <MenuItem className={classes.item}>
+        <MenuItem>
           <Link
             data-testid="about-link"
             to="/"
             color="textPrimary"
             className={classes.link}
           >
-            Resume
+            Blog
           </Link>
           </MenuItem>
           <MenuItem>
@@ -49,7 +49,7 @@ function AppBarCollapse() {
             color="textPrimary"
             className={classes.link}
           >
-            Guides
+            Mission
           </Link>
         </MenuItem>
         <MenuItem>
@@ -59,7 +59,7 @@ function AppBarCollapse() {
             color="textPrimary"
             className={classes.link}
           >
-            Solutions
+            Vision
           </Link>
         </MenuItem>
         <MenuItem>
@@ -69,7 +69,7 @@ function AppBarCollapse() {
             color="textPrimary"
             className={classes.link}
           >
-            Certifications
+            Blog
           </Link>
         </MenuItem>
       </ButtonAppBarCollapse>
@@ -78,34 +78,34 @@ function AppBarCollapse() {
           <Link
             variant="button"
             color="inherit"
-            to="/"
+            to="/blog"
             className={classes.link}
           >
-            Experience
+            Blog
           </Link>
           <Link
             variant="button"
             color="inherit"
-            to="/blog/blog1"
+            to="/mission"
             className={classes.link}
           >
-            Skills
+            Mission
           </Link>
           <Link
             variant="button"
             color="inherit"
-            to="/"
+            to="/vision"
             className={classes.link}
           >
-            Education
+            Vision
           </Link>
           <Link
             variant="button"
             color="inherit"
-            to="/"
+            to="/about"
             className={classes.link}
           >
-            Contact
+            About
           </Link>
         </nav>
       </div>
