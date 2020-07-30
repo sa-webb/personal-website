@@ -4,6 +4,7 @@ import Particles from "react-particles-js"
 const ParticlesBG = () => {
   return (
     <Particles
+      height="100vh"
       params={{
         particles: {
           number: {
@@ -98,7 +99,7 @@ const ParticlesBG = () => {
               size: 40,
               duration: 2,
               opacity: 8,
-              speed: 3,
+              // speed: 3,
             },
             repulse: {
               distance: 200,
@@ -118,8 +119,8 @@ const ParticlesBG = () => {
         backgroundColor: "#5018b6",
         position: "absolute",
         width: "100%",
-        height: "100%",
-        zIndex: -1
+        height: "100vh",
+        zIndex: -1,
       }}
     />
   )
