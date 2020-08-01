@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
 })
 
-const BlogPage = () => {
+const ProjectsPage = () => {
   const classes = useStyles()
   return (
     <>
@@ -44,9 +44,7 @@ const BlogPage = () => {
           className={classes.opac}
         >
           <Typography variant="h6">
-            My mission is to create innovative technological solutions, pursue
-            lifelong learning, help as many people as possible, inspire others
-            to achieve great things, and serve as a leader.
+            Projects coming soon!
           </Typography>
         </Grid>
       </Container>
@@ -54,4 +52,4 @@ const BlogPage = () => {
   )
 }
 
-export default BlogPage
+export default ProjectsPage
