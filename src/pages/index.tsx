@@ -44,7 +44,18 @@ const useStyles = makeStyles(theme => ({
     },
   },
   root: {
-    paddingTop: `3em`,
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: theme.spacing(1),
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingTop: theme.spacing(2),
+    },
+    [theme.breakpoints.up('lg')]: {
+      paddingTop: theme.spacing(4),
+    },
+    [theme.breakpoints.up('xl')]: {
+      paddingTop: theme.spacing(6),
+    },
   },
   card: {
     height: "100%",
