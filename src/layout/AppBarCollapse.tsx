@@ -48,21 +48,11 @@ const AppBarCollapse = () => {
           <MenuItem className={classes.test}>
           <Link
             data-testid="about-link"
-            to="/mission"
+            to="/projects"
             color="textPrimary"
             className={classes.link}
           >
-            Mission
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link
-            data-testid="about-link"
-            to="/vision"
-            color="textPrimary"
-            className={classes.link}
-          >
-            Vision
+            Projects
           </Link>
         </MenuItem>
         <MenuItem>
@@ -89,18 +79,10 @@ const AppBarCollapse = () => {
           <Link
             variant="button"
             color="inherit"
-            to="/mission"
+            to="/projects"
             className={classes.link}
           >
-            Mission
-          </Link>
-          <Link
-            variant="button"
-            color="inherit"
-            to="/vision"
-            className={classes.link}
-          >
-            Vision
+            Projects
           </Link>
           <Link
             variant="button"
