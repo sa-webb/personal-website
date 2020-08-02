@@ -4,25 +4,41 @@ import ParticlesBG from "../components/particles"
 import SEO from "../components/seo"
 
 import Container from "@material-ui/core/Container"
-import { makeStyles } from "@material-ui/styles"
+import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import { Typography } from "@material-ui/core"
 import Header from "../layout/Header"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: "10em",
+    paddingTop: "5em",
   },
   opac: {
-    height: "18vh",
+    // iPhone XR
+    [theme.breakpoints.down("sm")]: {
+      height: `50vh`,
+    },
+    [theme.breakpoints.up("md")]: {
+      height: `55vh`,
+      paddingLeft: `1em`,
+    },
+    // Macbook 13
+    [theme.breakpoints.up("lg")]: {
+      height: `56vh`,
+      paddingLeft: `1em`,
+    },
+    [theme.breakpoints.up("xl")]: {
+      height: `65vh`,
+    },
+
     backgroundColor: `rgba(0, 0, 0, 0.5)`,
     color: `#fff`,
     marginLeft: "auto",
     marginRight: "auto",
   },
-})
+}))
 
-const BlogPage = () => {
+const AboutPage = () => {
   const classes = useStyles()
   return (
     <>
@@ -43,11 +59,23 @@ const BlogPage = () => {
           justify="center"
           className={classes.opac}
         >
-          <Typography variant="h6">
+          <Typography variant="h6" gutterBottom>
             {" "}
-            I am a jovial spirit with an apt for problem solving. I fell into
-            Computer Science by accident, despite loving computers my entire
-            life. Fortunately, destiny works in mysterious ways.
+            Austin Webb is a Software Engineer focusing on web technologies with
+            experience using numerous frameworks, libraries, and tools. His
+            primary professional experience has involved designing and
+            developing proto-types and applications - from architecture to
+            development.
+          </Typography>
+          <Typography variant="h6" gutterBottom>
+            He is driven by problems, challenges, and teamwork and hopes to
+            eventually become a Software Architect and practice theroretical
+            design and development principles of software systems.
+          </Typography>
+          <Typography variant="h6">
+            His mission is to serve as a leader, create innovative technological
+            solutions, pursue lifelong learning, help as many people as
+            possible, and inspire others to achieve great things.
           </Typography>
         </Grid>
       </Container>
@@ -55,4 +83,4 @@ const BlogPage = () => {
   )
 }
 
-export default BlogPage
+export default AboutPage
