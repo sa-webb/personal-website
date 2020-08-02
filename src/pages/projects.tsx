@@ -43,7 +43,7 @@ const ProjectsPage = () => {
           justify="center"
           className={classes.opac}
         >
-          <Typography variant="h6">
+          <Typography component="h1" variant="h3">
             Projects coming soon!
           </Typography>
         </Grid>
