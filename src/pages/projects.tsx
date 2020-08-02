@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     paddingTop: "10em",
   },
   opac: {
-    height: "22vh",
+    height: "18vh",
     backgroundColor: `rgba(0, 0, 0, 0.5)`,
     color: `#fff`,
     marginLeft: "auto",
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
 })
 
-const BlogPage = () => {
+const ProjectsPage = () => {
   const classes = useStyles()
   return (
     <>
@@ -44,10 +44,7 @@ const BlogPage = () => {
           className={classes.opac}
         >
           <Typography variant="h6">
-            I want to work to the best of my ability and contribute to something
-            bigger than myself. I am driven by problems, challenges, and
-            teamwork. What's more important to me than being successful is
-            helping others.
+            Projects coming soon!
           </Typography>
         </Grid>
       </Container>
@@ -55,4 +52,4 @@ const BlogPage = () => {
   )
 }
 
-export default BlogPage
+export default ProjectsPage
