@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   opac: {
     // iPhone XR
     [theme.breakpoints.down("sm")]: {
-      height: `50vh`,
+      height: `55vh`,
     },
     [theme.breakpoints.up("md")]: {
       height: `55vh`,
