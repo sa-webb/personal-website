@@ -11,12 +11,12 @@ import Header from "../layout/Header"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: "5em",
+    paddingTop: "3em",
   },
   opac: {
     // iPhone XR
     [theme.breakpoints.down("sm")]: {
-      height: `55vh`,
+      height: `75vh`,
     },
     [theme.breakpoints.up("md")]: {
       height: `55vh`,
@@ -45,7 +45,6 @@ const AboutPage = () => {
       <SEO title="Blog" />
       <ParticlesBG />
       <Header siteTitle="Austin Webb" />
-
       <Container maxWidth="md" className={classes.root}>
         <Grid
           container
