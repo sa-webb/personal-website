@@ -8,13 +8,15 @@ import Footer from "../layout/Footer"
 import SEO from "../components/seo"
 
 import GitHubIcon from "../components/github"
-import SpectrumIcon from "../components/spectrum"
+import AdobeIcon from "../components/adobe"
 import ParticlesBG from "../components/particles"
 
 import Link from "@material-ui/core/Link"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import { Grid, CardActionArea, Card, Typography } from "@material-ui/core"
+
+import pdf from '../../static/AustinWebb_Resume.pdf'
 
 type DataProps = {
   site: {
@@ -156,20 +158,20 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
                 spacing={4}
               >
                 <Grid item md={2} xs={3}>
-                  <Link href="https://www.linkedin.com/in/austin-webb-0432431a3/">
+                  <Link href="https://www.linkedin.com/in/steven-austin-webb/" target="_blank">
                     <LinkedinIcon size={70} round={true} />
                   </Link>
                 </Grid>
 
                 <Grid item md={2} xs={3}>
-                  <Link href="https://github.com/sa-webb">
+                  <Link href="https://github.com/sa-webb" target="_blank">
                     <GitHubIcon />
                   </Link>
                 </Grid>
 
                 <Grid item md={2} xs={3}>
-                  <Link href="https://spectrum.chat/users/austin-webb?tab=activity">
-                    <SpectrumIcon />
+                  <Link href={pdf} target="_blank">
+                    <AdobeIcon />
                   </Link>
                 </Grid>
               </Grid>
