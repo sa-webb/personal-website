@@ -14,7 +14,17 @@ const styles = theme => ({
   },
 })
 
-class ButtonAppBarCollapse extends React.Component {
+type IProps = {
+  classes: {
+    buttonCollapse: string
+  }
+}
+
+type IState = {
+  anchorEl: Element
+}
+
+class ButtonAppBarCollapse extends React.Component<IProps, IState> {
   constructor(props) {
     super(props)
     this.state = {
