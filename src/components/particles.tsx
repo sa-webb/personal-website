@@ -15,7 +15,7 @@ const ParticlesBG = () => {
             },
           },
           color: {
-            value: "#0ee5f2",
+            value: "#fff",
           },
           shape: {
             type: "circle",
@@ -116,7 +116,7 @@ const ParticlesBG = () => {
         retina_detect: true,
       }}
       style={{
-        backgroundColor: "#5018b6",
+        backgroundColor: "#757474",
         position: "absolute",
         width: "100%",
         height: "100vh",
