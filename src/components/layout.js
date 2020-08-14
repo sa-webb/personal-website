@@ -50,10 +50,6 @@ const Layout = ({ location, title, children }) => {
   return (
     <div
       style={{
-        width: "100%",
-        height: "100vh",
-        backgroundColor: `#5018b6`,
-        color: `#fff`,
         marginLeft: `auto`,
         marginRight: `auto`,
         maxWidth: rhythm(24),
