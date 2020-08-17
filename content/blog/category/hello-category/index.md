@@ -5,4 +5,4 @@ description: "Hello World"
 featuredImage: "./profile_pic.jpg"
 ---
 
-Hello technical blogs coming soon!.
+Hello from category!
