@@ -26,7 +26,7 @@ type DataProps = {
   }
   markdownRemark: {
     frontmatter: {
-      title: string
+      profession: string
       degree: string
       email: string
       number: string
@@ -120,7 +120,7 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
                 className={classes.textColor}
               >
                 {" "}
-                {frontmatter.title}
+                {frontmatter.profession}
               </Typography>
               <Typography
                 variant="h5"
@@ -195,7 +195,7 @@ export const testQuery = graphql`
     }
     markdownRemark(fileAbsolutePath: { regex: "/bio/" }) {
       frontmatter {
-        title
+        profession
         degree
         email
         number
