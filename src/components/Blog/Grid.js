@@ -27,17 +27,18 @@ const useStyles = makeStyles(theme => ({
 
 const BlogGrid = ({ children }) => {
   const classes = useStyles()
-  React.Children.map(children, Child => {
+  const grid = React.Children.map(children, (child, index) => {
     return (
       <Container maxWidth="md" className={classes.root}>
         <Grid container spacing={0}>
-          <Grid item xs={12} sm={6} md={6}>
-            {Child}
+          <Grid item xs={12} sm={6} md={6} key={index}>
+            {children}
           </Grid>
         </Grid>
       </Container>
     )
   })
+  return <div className="blog-grid">{grid}</div>
 }
 
 export default BlogGrid

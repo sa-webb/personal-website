@@ -4,6 +4,7 @@ import BlogCard from "./Card"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import { Grid, CardActionArea, Card, Typography } from "@material-ui/core"
+import BlogGrid from "./Grid"
 // import BlogGrid from "./Grid"
 
 const useStyles = makeStyles(theme => ({
@@ -53,15 +54,11 @@ export default function Category() {
         }
       `}
       render={data => (
-        <Container maxWidth="md" className={classes.root}>
-          <Grid container spacing={0}>
-            <Grid item xs={12} sm={6} md={6}>
-              {data.allMarkdownRemark.edges.map(({ node }) => (
-                <BlogCard data={node} />
-              ))}
-            </Grid>
-          </Grid>
-        </Container>
+        <BlogGrid>
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+            <BlogCard key={node.id} data={node} />
+          ))}
+        </BlogGrid>
       )}
     />
   )
