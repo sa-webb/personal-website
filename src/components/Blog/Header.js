@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link } from "gatsby"
+import { navigate } from "gatsby"
 import PropTypes from "prop-types"
 import { makeStyles } from "@material-ui/core/styles"
 import Toolbar from "@material-ui/core/Toolbar"
@@ -24,10 +24,16 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Button size="medium">
-          {/* <Link  to="/"> */}
-            sa-webb
-          {/* </Link> */}
+        <Button
+          size="medium"
+          onClick={event => {
+            event.preventDefault()
+            navigate(
+              "/"
+            )
+          }}
+        >
+          sa-webb
         </Button>
         <Typography
           component="h2"

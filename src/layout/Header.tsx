@@ -4,8 +4,9 @@ import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 
 import AppBarCollapse from "./AppBarCollapse"
-import Link from "../components/link"
 import Typography from "@material-ui/core/Typography"
+import { navigate } from "gatsby"
+import Button from "@material-ui/core/Button"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -14,6 +15,7 @@ const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
     color: `#fff`,
+    textTransform: "none"
   },
   appbar: {
     flex: 1,
@@ -36,17 +38,24 @@ const Header: React.FC<IProps> = ({ siteTitle }) => {
   return (
     <AppBar position="static" className={classes.appbar}>
       <Toolbar>
-        <Link underline="none" to="/" className={classes.link}>
+        <Button
+          size="small"
+          onClick={event => {
+            event.preventDefault()
+            navigate(
+              "/"
+            )
+          }}
+        >
         <Typography
           component="h2"
           variant="h4"
           color="inherit"
           className={classes.title}
-          
         >
           {siteTitle}
         </Typography>
-        </Link>
+        </Button>
         <AppBarCollapse />
       </Toolbar>
     </AppBar>
