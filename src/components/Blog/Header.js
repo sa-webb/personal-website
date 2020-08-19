@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { makeStyles } from "@material-ui/core/styles"
 import Toolbar from "@material-ui/core/Toolbar"
@@ -24,10 +24,10 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Button size="small">
-          <Link style={{ color: `#fff` }} to="/">
+        <Button size="medium">
+          {/* <Link  to="/"> */}
             sa-webb
-          </Link>
+          {/* </Link> */}
         </Button>
         <Typography
           component="h2"
