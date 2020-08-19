@@ -1,14 +1,18 @@
+require("dotenv").config()
+
+const config = require('./config/')
+
 module.exports = {
   siteMetadata: {
-    title: `Austin Webb`,
+    title: config.title,
     author: {
-      name: `sa-webb`,
-      summary: `Software engineer specializing in web technologies.`,
+      name: config.author.name,
+      summary: config.author.summary
     },
-    description: `My personal website built with Gatsby.js`,
-    siteUrl: `https://sa-webb.dev`,
+    description: config.description,
+    siteUrl: config.siteUrl,
     social: {
-      spectrum: `austin-webb`,
+      spectrum: config.social.spectrum,
     },
   },
   plugins: [
