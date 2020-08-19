@@ -1,7 +1,6 @@
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
-import Card from "@material-ui/core/Card"
-import CardActionArea from "@material-ui/core/CardActionArea"
+import { StaticQuery, graphql } from "gatsby"
+import BlogCard from './Card'
 
 export default function Category() {
   return (
@@ -29,11 +28,7 @@ export default function Category() {
       render={data => (
         <div>
           {data.allMarkdownRemark.edges.map(({ node }) => (
-            <Card>
-              <CardActionArea>
-                <Link to={`/blog${node.fields.slug}`}>{node.frontmatter.title}</Link>
-              </CardActionArea>
-            </Card>
+            <BlogCard data={node}/>
           ))}
         </div>
       )}
