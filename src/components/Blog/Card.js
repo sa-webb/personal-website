@@ -18,7 +18,7 @@ const BlogCard = ({ data }) => {
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <Link to={`/blog${data.fields.slug}`}>{data.frontmatter.title}</Link>
+        <Link to={data.fields.slug}>{data.frontmatter.title}</Link>
       </CardActionArea>
     </Card>
   )
