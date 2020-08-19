@@ -22,18 +22,20 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     margin: theme.spacing(1, 1.5),
-    textDecoration: 'none',
-    boxShadow: 'none',
+    textDecoration: "none",
+    boxShadow: "none",
   },
   test: {
-    backgroundColor: 'transparent'
-  }
+    backgroundColor: "transparent",
+    flexDirection: "column",
+    fontSize: 20,
+  },
 }))
 
 const navs = [
-  { page: "Blog", url: "/blog"},
-  { page: "Projects", url: "/projects"},
-  { page: "About", url: "/about"}
+  { page: "Blog", url: "/blog" },
+  { page: "Projects", url: "/projects" },
+  { page: "About", url: "/about" },
 ]
 
 const AppBarCollapse = () => {
@@ -42,34 +44,17 @@ const AppBarCollapse = () => {
     <div className={classes.root}>
       <ButtonAppBarCollapse>
         <MenuItem className={classes.test}>
-          <Link
-            data-testid="about-link"
-            to="/blog"
-            color="textPrimary"
-            className={classes.link}
-          >
-            Blog
-          </Link>
-          </MenuItem>
-          <MenuItem className={classes.test}>
-          <Link
-            data-testid="about-link"
-            to="/projects"
-            color="textPrimary"
-            className={classes.link}
-          >
-            Projects
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link
-            data-testid="about-link"
-            to="/about"
-            color="textPrimary"
-            className={classes.link}
-          >
-            About
-          </Link>
+          {navs.map(item => (
+            <Link
+              data-testid="collapsed-links"
+              to={item.url}
+              color="textPrimary"
+              className={classes.link}
+              key={item.page}
+            >
+              {item.page}
+            </Link>
+          ))}
         </MenuItem>
       </ButtonAppBarCollapse>
       <div className={classes.buttonBar} id="appbar-collapse">
