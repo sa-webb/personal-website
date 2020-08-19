@@ -6,7 +6,12 @@ import SEO from "../components/seo"
 import Home from "../components/Blog/Home"
 import Header from "../components/Blog/Header"
 
-import { CssBaseline, Container, Toolbar, makeStyles } from "@material-ui/core"
+import {
+  CssBaseline,
+  Container,
+  Toolbar,
+  makeStyles,
+} from "@material-ui/core"
 
 const sections = [
   { title: "Software", url: "blog/software/" },
@@ -53,12 +58,7 @@ const BlogPage = props => {
               style={{
                 fontSize: 18,
               }}
-              // color="inherit"
-              // noWrap
-              // key={section.title}
-              // variant="body2"
-              // href={section.url}
-              // className={classes.toolbarLink}
+              key={section.title}
             >
               {section.title}
             </Link>
