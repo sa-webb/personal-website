@@ -54,11 +54,13 @@ export default function Category() {
         }
       `}
       render={data => (
-        <BlogGrid>
+        <div className="category-blogs">
           {data.allMarkdownRemark.edges.map(({ node }) => (
-            <BlogCard key={node.id} data={node} />
+            <BlogGrid>
+              <BlogCard key={node.id} data={node} />
+            </BlogGrid>
           ))}
-        </BlogGrid>
+        </div>
       )}
     />
   )
