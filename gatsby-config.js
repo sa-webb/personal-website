@@ -8,10 +8,11 @@ module.exports = {
     description: `My personal website built with Gatsby.js`,
     siteUrl: `https://sa-webb.dev`,
     social: {
-      twitter: `kylemathews`,
+      spectrum: `austin-webb`,
     },
   },
   plugins: [
+    `gatsby-plugin-top-layout`,
     `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-source-filesystem`,
