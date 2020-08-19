@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import FloatingLightDarkFab from './FloatingLightDarkFab/FloatingLightDarkFab'
 import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
@@ -29,6 +29,7 @@ const Layout = ({ location, title, children }) => {
     )
   } else {
     header = (
+      <>
       <h3
         style={{
           fontFamily: `Montserrat, sans-serif`,
@@ -44,8 +45,11 @@ const Layout = ({ location, title, children }) => {
         >
           {title}
         </Link>
+        <FloatingLightDarkFab />
       </h3>
+      </>
     )
+    
   }
   return (
     <div
