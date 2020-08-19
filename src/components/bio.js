@@ -28,14 +28,14 @@ const Bio = () => {
             summary
           }
           social {
-            twitter
+            spectrum
           }
         }
       }
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata
   return (
     <div
       style={{
@@ -59,8 +59,8 @@ const Bio = () => {
       <p>
         Written by <strong>{author.name}</strong> {author.summary}
         {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
+        <a href={`https://linkedin.com/in/steven-austin-webb`}>
+          You should connect with him on LinkedIn
         </a>
       </p>
     </div>
