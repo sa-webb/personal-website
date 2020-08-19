@@ -9,10 +9,10 @@ import Header from "../components/Blog/Header"
 import { CssBaseline, Container, Toolbar, makeStyles } from "@material-ui/core"
 
 const sections = [
-  { title: "Contact", url: "blog/contact/" },
-  { title: "Category", url: "blog/category/" },
-  { title: "Culture", url: "#" },
-  { title: "Business", url: "#" },
+  { title: "Software", url: "blog/software/" },
+  { title: "Tutorials", url: "blog/tutorials/" },
+  { title: "Business", url: "blog/business/" },
+  { title: "Personal", url: "blog/personal/" },
 ]
 
 const useStyles = makeStyles(theme => ({
@@ -51,7 +51,7 @@ const BlogPage = props => {
             <Link
               to={section.url}
               style={{
-                fontSize: 18
+                fontSize: 18,
               }}
               // color="inherit"
               // noWrap
@@ -68,7 +68,7 @@ const BlogPage = props => {
       <Router>
         <Home path="blog" />
         <LazyComponent Component={Contact} path="blog/contact" />
-        <LazyComponent Component={About} path="blog/category" />
+        <LazyComponent Component={About} path="blog/tutorials" />
       </Router>
     </>
   )
