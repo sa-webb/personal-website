@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const next = index === 0 ? null : posts[index - 1].node
 
     createPage({
-      path: post.node.fields.slug,
+      path: `blog${post.node.fields.slug}`,
       component: blogPost,
       context: {
         slug: post.node.fields.slug,
@@ -60,5 +60,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+  }
+}
+
+// Client-side routing for Blogs
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions
+  if (page.path.match(/^\/blog\//)) {
+    page.matchPath = `/blog/*`
+    createPage(page)
   }
 }
