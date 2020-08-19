@@ -30,6 +30,12 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
+const navs = [
+  { page: "Blog", url: "/blog"},
+  { page: "Projects", url: "/projects"},
+  { page: "About", url: "/about"}
+]
+
 const AppBarCollapse = () => {
   const classes = useStyles()
   return (
