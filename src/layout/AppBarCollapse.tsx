@@ -24,8 +24,9 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1, 1.5),
     textDecoration: "none",
     boxShadow: "none",
+    fontSize: 16
   },
-  test: {
+  menuItem: {
     backgroundColor: "transparent",
     flexDirection: "column",
     fontSize: 20,
@@ -43,7 +44,7 @@ const AppBarCollapse = () => {
   return (
     <div className={classes.root}>
       <ButtonAppBarCollapse>
-        <MenuItem className={classes.test}>
+        <MenuItem className={classes.menuItem}>
           {navs.map(item => (
             <Link
               data-testid="collapsed-links"
