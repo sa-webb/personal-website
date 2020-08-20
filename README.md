@@ -12,3 +12,4 @@ Special thanks to:
 
 * https://github.com/danilowoz/gatsby-advanced-blog-system/blob/master/gatsby-node.js
 * https://github.com/GalenWong/galenwong.github.io
+* https://eriksamuelsson.com/put-graphql-fragments-in-their-own-files-in-gatsby/
