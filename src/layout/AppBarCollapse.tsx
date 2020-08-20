@@ -51,6 +51,10 @@ const AppBarCollapse = () => {
               color="textPrimary"
               className={classes.link}
               key={item.page}
+              style={{
+                textDecoration: "none",
+                boxShadow: 'none'
+              }}
             >
               {item.page}
             </Link>
@@ -59,30 +63,21 @@ const AppBarCollapse = () => {
       </ButtonAppBarCollapse>
       <div className={classes.buttonBar} id="appbar-collapse">
         <nav>
-          <Link
+          {navs.map(item => (
+            <Link
             variant="button"
             color="inherit"
-            to="/blog"
+            to={item.url}
             className={classes.link}
+            key={item.page}
+            style={{
+              textDecoration: "none",
+              boxShadow: 'none'
+            }}
           >
-            Blog
+            {item.page}
           </Link>
-          <Link
-            variant="button"
-            color="inherit"
-            to="/projects"
-            className={classes.link}
-          >
-            Projects
-          </Link>
-          <Link
-            variant="button"
-            color="inherit"
-            to="/about"
-            className={classes.link}
-          >
-            About
-          </Link>
+          ))}
         </nav>
       </div>
     </div>
