@@ -13,17 +13,7 @@ const Category = () => {
             filter: { fileAbsolutePath: { regex: "/blog/category/" } }
             sort: { fields: [frontmatter___date], order: DESC }
           ) {
-            edges {
-              node {
-                id
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
+            ...CategoryFragment
           }
         }
       `}
