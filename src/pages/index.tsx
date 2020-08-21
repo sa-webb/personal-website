@@ -16,25 +16,24 @@ import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import { Grid, CardActionArea, Card, Typography } from "@material-ui/core"
 
-import pdf from '../../static/AustinWebb_Resume.pdf'
+import pdf from "../../static/AustinWebb_Resume.pdf"
 
 type DataProps = {
   site: {
     siteMetadata: {
       title: string
+      author: {
+        name: string
+        profession: string
+        degree: string
+        email: string
+        number: string
+      }
     }
   }
-  markdownRemark: {
-    frontmatter: {
-      profession: string
-      degree: string
-      email: string
-      number: string
-      featuredImage: {
-        childImageSharp: {
-          fluid: FluidObject
-        }
-      }
+  icon: {
+    childImageSharp: {
+      fluid: FluidObject
     }
   }
 }
@@ -79,8 +78,7 @@ const useStyles = makeStyles(theme => ({
 const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
   const classes = useStyles()
 
-  const { markdownRemark } = data
-  const { frontmatter } = markdownRemark
+  const { author } = data.site.siteMetadata
 
   return (
     <>
@@ -93,9 +91,7 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
             <Grid item xs={12} sm={6} md={6}>
               <CardActionArea component="a">
                 <Card className={classes.card}>
-                  <Img
-                    fluid={frontmatter.featuredImage.childImageSharp.fluid}
-                  />
+                  <Img fluid={data.icon.childImageSharp.fluid} />
                 </Card>
               </CardActionArea>
             </Grid>
@@ -120,7 +116,7 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
                 className={classes.textColor}
               >
                 {" "}
-                {frontmatter.profession}
+                {author.profession}
               </Typography>
               <Typography
                 variant="h5"
@@ -129,7 +125,7 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
                 gutterBottom
                 className={classes.textColor}
               >
-                {frontmatter.degree}
+                {author.degree}
               </Typography>
               <Typography
                 variant="h5"
@@ -138,7 +134,7 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
                 component="p"
                 gutterBottom
               >
-                {frontmatter.email}
+                {author.email}
               </Typography>
               <Typography
                 variant="h5"
@@ -147,7 +143,7 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
                 component="p"
                 gutterBottom
               >
-                {frontmatter.number}
+                {author.number}
               </Typography>
               <Grid
                 container
@@ -158,7 +154,10 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
                 spacing={4}
               >
                 <Grid item md={2} xs={3}>
-                  <Link href="https://www.linkedin.com/in/steven-austin-webb/" target="_blank">
+                  <Link
+                    href="https://www.linkedin.com/in/steven-austin-webb/"
+                    target="_blank"
+                  >
                     <LinkedinIcon size={70} round={true} />
                   </Link>
                 </Grid>
@@ -187,24 +186,14 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
 export default TestPage
 
 export const testQuery = graphql`
-  query TestQuery {
+  query IndexQuery {
     site {
-      siteMetadata {
-        title
-      }
+      ...AuthorFragment
     }
-    markdownRemark(fileAbsolutePath: { regex: "/bio/" }) {
-      frontmatter {
-        profession
-        degree
-        email
-        number
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 530, maxHeight: 600) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+    icon: file(absolutePath: { regex: "/profile_pic.jpg/" }) {
+      childImageSharp {
+        fluid(maxWidth: 530, maxHeight: 600) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
