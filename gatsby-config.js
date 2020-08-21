@@ -7,7 +7,12 @@ module.exports = {
     title: config.title,
     author: {
       name: config.author.name,
-      summary: config.author.summary
+      degree: config.author.degree,
+      email: config.author.email,
+      number: config.author.number,
+      profession: config.author.profession,
+      summary: config.author.summary,
+      description: config.description
     },
     description: config.description,
     siteUrl: config.siteUrl,
@@ -30,13 +35,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/bio`,
-        name: `bio`,
       },
     },
     {
