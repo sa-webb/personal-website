@@ -3,8 +3,8 @@ module.exports = {
   author: {
     name: `sa-webb`,
     degree: `B.S. Computer Science`,
-    email: `stevenaustinwebb@gmail.com`,
-    number: `423-760-0010`,
+    major: `Software Systems`,
+    minor: `Business Administration`,
     profession: `Software Engineer`,
     summary: `Software engineer specializing in web technologies.`,
   },

@@ -8,8 +8,8 @@ module.exports = {
     author: {
       name: config.author.name,
       degree: config.author.degree,
-      email: config.author.email,
-      number: config.author.number,
+      major: config.author.major,
+      minor: config.author.minor,
       profession: config.author.profession,
       summary: config.author.summary,
       description: config.description
