@@ -10,22 +10,30 @@ const Category = () => {
       query={graphql`
         query CategoryQuery {
           allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/blog/computing/" } }
+            filter: { fileAbsolutePath: { regex: "/blog/category/" } }
             sort: { fields: [frontmatter___date], order: DESC }
           ) {
             ...CategoryFragment
           }
         }
       `}
-      render={data => (
-        <div className="category-blogs">
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <BlogGrid>
-              <BlogCard key={node.id} data={node} />
-            </BlogGrid>
-          ))}
-        </div>
-      )}
+      render={data => {
+        const posts = data.allMarkdownRemark.edges
+
+        if (posts.length === 0) {
+          return <p>No posts for this category</p>
+        } else {
+          return (
+            <div className="category-blogs">
+              {data.allMarkdownRemark.edges.map(({ node }) => (
+                <BlogGrid key={node.id}>
+                  <BlogCard key={node.id} data={node} />
+                </BlogGrid>
+              ))}
+            </div>
+          )
+        }
+      }}
     />
   )
 }
