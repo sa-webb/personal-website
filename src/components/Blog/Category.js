@@ -10,7 +10,7 @@ const Category = () => {
       query={graphql`
         query CategoryQuery {
           allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/blog/category/" } }
+            filter: { fileAbsolutePath: { regex: "/blog/computing/" } }
             sort: { fields: [frontmatter___date], order: DESC }
           ) {
             ...CategoryFragment
@@ -24,7 +24,7 @@ const Category = () => {
           return <p>No posts for this category</p>
         } else {
           return (
-            <div className="category-blogs">
+            <div className="computing-blogs">
               {data.allMarkdownRemark.edges.map(({ node }) => (
                 <BlogGrid key={node.id}>
                   <BlogCard key={node.id} data={node} />
