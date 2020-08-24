@@ -1,23 +1,22 @@
 import React from "react"
 import { Router, Link } from "@reach/router"
 
+import LoadingSpinner from "../components/loading"
+
 import SEO from "../components/seo"
 
 import Home from "../components/Blog/Home"
 import Header from "../components/Blog/Header"
+import { makeStyles } from "@material-ui/core/styles"
+import CssBaseline from "@material-ui/core/CssBaseline"
+import Container from "@material-ui/core/Container"
+import Toolbar from "@material-ui/core/Toolbar"
 
-import {
-  CssBaseline,
-  Container,
-  Toolbar,
-  makeStyles,
-} from "@material-ui/core"
-
-const sections = [
-  { title: "Software", url: "blog/software/" },
+const categories = [
+  { title: "All Posts", url: "blog/" },
+  { title: "Computing", url: "blog/computing/" },
   { title: "Tutorials", url: "blog/tutorials/" },
-  { title: "Business", url: "blog/business/" },
-  { title: "Personal", url: "blog/personal/" },
+  { title: "Learning", url: "blog/learning/" },
 ]
 
 const useStyles = makeStyles(theme => ({
@@ -31,10 +30,12 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Contact = React.lazy(() => import("../components/Blog/Contact"))
-const About = React.lazy(() => import("../components/Blog/Category"))
+const Computing = React.lazy(() => import("../components/Blog/Category"))
+const Tutorials = React.lazy(() => import("../components/Blog/Tutorials"))
+const Learning = React.lazy(() => import("../components/Blog/Learning"))
+
 const LazyComponent = ({ Component, ...props }) => (
-  <React.Suspense fallback={"<p>Loading...</p>"}>
+  <React.Suspense fallback={<LoadingSpinner />}>
     <Component {...props} />
   </React.Suspense>
 )
@@ -46,13 +47,13 @@ const BlogPage = props => {
       <SEO title="Blog" />
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Blog" sections={sections} />
+        <Header title="Blog" categories={categories} />
         <Toolbar
           component="nav"
           variant="dense"
           className={classes.toolbarSecondary}
         >
-          {sections.map(section => (
+          {categories.map(section => (
             <Link
               to={section.url}
               style={{
@@ -67,8 +68,9 @@ const BlogPage = props => {
       </Container>
       <Router>
         <Home path="blog" />
-        <LazyComponent Component={Contact} path="blog/contact" />
-        <LazyComponent Component={About} path="blog/tutorials" />
+        <LazyComponent Component={Computing} path="blog/computing" />
+        <LazyComponent Component={Tutorials} path="blog/tutorials" />
+        <LazyComponent Component={Learning} path="blog/learning" />
       </Router>
     </>
   )
