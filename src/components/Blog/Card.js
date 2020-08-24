@@ -11,9 +11,6 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 380,
   },
-  // media: {
-  //   height: 100,
-  // },
   cardAction: {
     marginLeft: "auto",
   },
@@ -24,9 +21,9 @@ const BlogCard = ({ data }) => {
   return (
     <Grid item xs={12} sm={6} md={4}>
       <Card className={classes.root}>
-        <CardActionArea className={classes.media}>
+        <CardActionArea>
           <Link to={data.fields.slug}>
-            <Img sizes={data.frontmatter.featuredImage.childImageSharp.sizes} />
+            <Img fluid={data.frontmatter.featuredImage.childImageSharp.fluid} />
           </Link>
         </CardActionArea>
         <CardContent>
