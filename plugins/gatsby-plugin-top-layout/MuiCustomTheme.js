@@ -29,7 +29,7 @@ const myTheme = isDark =>
       palette: {
         type: isDark ? "dark" : "light",
         primary: {
-          main: "#ef5350",
+          main: "#00A3BF",
         }
       }
     })
