@@ -10,7 +10,7 @@ const Category = () => {
       query={graphql`
         query CategoryQuery {
           allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/blog/category/" } }
+            filter: { fileAbsolutePath: { regex: "/blog/computing/" } }
             sort: { fields: [frontmatter___date], order: DESC }
           ) {
             ...CategoryFragment
