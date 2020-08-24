@@ -8,7 +8,7 @@ import { rhythm, scale } from "../utils/typography"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
+  const siteTitle = data.site.siteMetadata.author.name
   const { previous, next } = pageContext
 
   return (
@@ -84,7 +84,9 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
-        title
+        author {
+          name
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

@@ -26,8 +26,8 @@ type DataProps = {
         name: string
         profession: string
         degree: string
-        email: string
-        number: string
+        major: string
+        minor: string
       }
     }
   }
@@ -84,7 +84,7 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
     <>
       <SEO title="Profile" />
       <ParticlesBG />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.author.name} />
       <main>
         <Container maxWidth="md" className={classes.root}>
           <Grid container spacing={0}>
@@ -109,7 +109,7 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
               className={classes.opac}
             >
               <Typography
-                component="h1"
+                component="p"
                 variant="h4"
                 align="center"
                 gutterBottom
@@ -128,22 +128,22 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
                 {author.degree}
               </Typography>
               <Typography
-                variant="h5"
+                variant="h6"
                 align="center"
                 className={classes.textColor}
                 component="p"
                 gutterBottom
               >
-                {author.email}
+                Major: {author.major}
               </Typography>
               <Typography
-                variant="h5"
+                variant="h6"
                 align="center"
                 className={classes.textColor}
                 component="p"
                 gutterBottom
               >
-                {author.number}
+                Minor: {author.minor}
               </Typography>
               <Grid
                 container
@@ -178,7 +178,9 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
           </Grid>
         </Container>
       </main>
+      <footer>
       <Footer />
+      </footer>
     </>
   )
 }
