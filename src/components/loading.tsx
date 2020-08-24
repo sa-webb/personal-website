@@ -38,7 +38,7 @@ const LoadingSpinner = () => {
   return (
     <Container maxWidth="md" className={classes.root}>
       <Grid container spacing={0}>
-        <Grid container xs={12} sm={6} md={6} alignItems="center" alignContent="center" justify="center">
+        <Grid container item xs={12} sm={6} md={6} alignItems="center" alignContent="center" justify="center">
           <div className={classes.circular}>
             <CircularProgress />
           </div>
