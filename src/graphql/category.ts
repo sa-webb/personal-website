@@ -10,6 +10,15 @@ export const CategoryFragment = graphql`
         }
         frontmatter {
           title
+          date(formatString: "MMMM DD, YYYY")
+          description
+          featuredImage {
+            childImageSharp {
+              sizes(maxWidth: 150, maxHeight: 150) {
+                ...GatsbyImageSharpSizes
+              }
+            }
+          }
         }
       }
     }
