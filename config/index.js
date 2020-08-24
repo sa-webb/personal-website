@@ -1,12 +1,12 @@
 module.exports = {
-  title: `Austin Webb`,
+  title: `sa-webb`,
   author: {
-    name: `sa-webb`,
+    name: `Austin Webb`,
     degree: `B.S. Computer Science`,
     major: `Software Systems`,
     minor: `Business Administration`,
     profession: `Software Engineer`,
-    summary: `Software engineer specializing in web technologies.`,
+    summary: `a software engineer specializing in web technologies.`,
   },
   description: `My personal website built with Gatsby.js`,
   siteUrl: `https://sa-webb.dev`,

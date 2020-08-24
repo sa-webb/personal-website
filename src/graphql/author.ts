@@ -7,8 +7,8 @@ export const AuthorFragment = graphql`
       author {
         name
         degree
-        email
-        number
+        major
+        minor
         profession
         description
         summary
