@@ -14,8 +14,8 @@ export const CategoryFragment = graphql`
           description
           featuredImage {
             childImageSharp {
-              sizes(maxWidth: 150, maxHeight: 150) {
-                ...GatsbyImageSharpSizes
+              fluid(maxWidth: 150, maxHeight: 150) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
