@@ -1,11 +1,10 @@
 ---
 title: Intelligent Search
-date: "2020-08-05T22:12:03.284Z"
+date: "2020-08-08T22:12:03.284Z"
 description: "What we can learn from A.I. algorithms"
-featuredImage: "./artificial-intelligence.png"
+featuredImage: "./intelligent_search.jpg"
 ---
-![neuro](./artificial-intelligence.png)
-*Image Source - https://neurotracker.net/2018/10/25/is-neuroscience-the-future-of-sports-science/*
+![neuro](./intelligent_search.jpg)
 
 Artifical Intelligence is structured using Neural Networks "which loosely model the neurons in a biologcal brain." [1]
 
