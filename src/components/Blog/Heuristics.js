@@ -23,7 +23,7 @@ const Learning = () => {
       query={graphql`
         query LearningQuery {
           allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/blog/learning/" } }
+            filter: { fileAbsolutePath: { regex: "/blog/heuristics/" } }
             sort: { fields: [frontmatter___date], order: DESC }
           ) {
             ...CategoryFragment

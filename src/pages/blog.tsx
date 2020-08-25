@@ -16,7 +16,7 @@ const categories = [
   { title: "All Posts", url: "blog/" },
   { title: "Computing", url: "blog/computing/" },
   { title: "Tutorials", url: "blog/tutorials/" },
-  { title: "Learning", url: "blog/learning/" },
+  { title: "Heuristics", url: "blog/heuristics/" },
 ]
 
 const useStyles = makeStyles(theme => ({
@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
 
 const Computing = React.lazy(() => import("../components/Blog/Category"))
 const Tutorials = React.lazy(() => import("../components/Blog/Tutorials"))
-const Learning = React.lazy(() => import("../components/Blog/Learning"))
+const Heuristics = React.lazy(() => import("../components/Blog/Heuristics"))
 
 const LazyComponent = ({ Component, ...props }) => (
   <React.Suspense fallback={<LoadingSpinner />}>
@@ -70,7 +70,7 @@ const BlogPage = props => {
         <Home path="blog" />
         <LazyComponent Component={Computing} path="blog/computing" />
         <LazyComponent Component={Tutorials} path="blog/tutorials" />
-        <LazyComponent Component={Learning} path="blog/learning" />
+        <LazyComponent Component={Heuristics} path="blog/heuristics" />
       </Router>
     </>
   )
