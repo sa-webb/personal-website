@@ -1,6 +1,6 @@
 require("dotenv").config()
 
-const config = require('./config/')
+const config = require("./config/")
 
 module.exports = {
   siteMetadata: {
@@ -12,7 +12,7 @@ module.exports = {
       minor: config.author.minor,
       profession: config.author.profession,
       summary: config.author.summary,
-      description: config.description
+      description: config.description,
     },
     description: config.description,
     siteUrl: config.siteUrl,
@@ -86,8 +86,21 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
+    {
+      resolve: "gatsby-plugin-ts",
+      options: {
+        tsLoader: {
+          logLevel: "warn",
+        },
+        forkTsCheckerPlugin: {
+          eslint: true,
+        },
+        fileName: `types/graphql-types.ts`,
+        codegen: true,
+        codegenDelay: 250,
+        typeCheck: process.env.NODE_ENV !== "production",
+      },
+    },
     // `gatsby-plugin-offline`,
   ],
 }
