@@ -1,14 +1,14 @@
 import React from "react"
 import { PageProps, graphql } from "gatsby"
 import Img, { FluidObject } from "gatsby-image"
-import { LinkedinIcon, EmailIcon } from "react-share"
+import { LinkedinIcon } from "react-share"
 
 import Header from "../layout/Header"
 import Footer from "../layout/Footer"
 import SEO from "../components/seo"
 
-import GitHubIcon from "../components/github"
-import AdobeIcon from "../components/adobe"
+import GitHubIcon from "../components/icons/github"
+import AdobeIcon from "../components/icons/adobe"
 import ParticlesBG from "../components/particles"
 
 import Link from "@material-ui/core/Link"
