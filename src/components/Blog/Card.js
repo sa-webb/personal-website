@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, navigate } from "gatsby"
-import Img, { FluidObject } from "gatsby-image"
+import Img from "gatsby-image"
 import { makeStyles } from "@material-ui/core/styles"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
