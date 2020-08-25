@@ -18,6 +18,7 @@ const LightDarkFab: React.FC<IProps> = props => {
       <Fab
         color={theme === "dark" ? "default" : "primary"}
         size="small"
+        // @ts-ignore
         onClick={() => changeTheme(!(theme === "dark"))}
         aria-label="Toggle light or dark mode"
         {...props}
