@@ -1,23 +1,17 @@
 import React from "react"
-import { Router, Link } from "@reach/router"
-
-import LoadingSpinner from "../components/loading"
-
-import SEO from "../components/seo"
+import { Router, Link, RouteComponentProps } from "@reach/router"
 
 import Home from "../components/Blog/Home"
 import Header from "../components/Blog/Header"
+import LoadingSpinner from "../components/loading"
+import SEO from "../components/seo"
+
 import { makeStyles } from "@material-ui/core/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Container from "@material-ui/core/Container"
 import Toolbar from "@material-ui/core/Toolbar"
 
-const categories = [
-  { title: "All Posts", url: "blog/" },
-  { title: "Computing", url: "blog/computing/" },
-  { title: "Tutorials", url: "blog/tutorials/" },
-  { title: "Heuristics", url: "blog/heuristics/" },
-]
+import { BLOG_ROUTES, categories } from '../routes'
 
 const useStyles = makeStyles(theme => ({
   toolbarSecondary: {
@@ -40,14 +34,14 @@ const LazyComponent = ({ Component, ...props }) => (
   </React.Suspense>
 )
 
-const BlogPage = props => {
+const BlogPage = () => {
   const classes = useStyles()
   return (
     <>
       <SEO title="Blog" />
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Blog" categories={categories} />
+        <Header title="Blog" />
         <Toolbar
           component="nav"
           variant="dense"
@@ -67,12 +61,16 @@ const BlogPage = props => {
         </Toolbar>
       </Container>
       <Router>
-        <Home path="blog" />
-        <LazyComponent Component={Computing} path="blog/computing" />
-        <LazyComponent Component={Tutorials} path="blog/tutorials" />
-        <LazyComponent Component={Heuristics} path="blog/heuristics" />
+        <RouterPage pageComponent={<Home />} path={BLOG_ROUTES.HOME} />
+        <LazyComponent Component={Computing} path={BLOG_ROUTES.COMPUTING} />
+        <LazyComponent Component={Tutorials} path={BLOG_ROUTES.TUTORIALS} />
+        <LazyComponent Component={Heuristics} path={BLOG_ROUTES.HEURISTICS} />
       </Router>
     </>
   )
 }
 export default BlogPage
+
+const RouterPage = (
+  props: { pageComponent: JSX.Element } & RouteComponentProps
+) => props.pageComponent;
