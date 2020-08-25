@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import FloatingLightDarkFab from "./FloatingLightDarkFab/FloatingLightDarkFab"
+import FloatingLightDarkFab from "./Blog/FloatingLightDarkFab"
 import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
