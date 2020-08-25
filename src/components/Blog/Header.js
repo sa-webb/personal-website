@@ -6,7 +6,7 @@ import Toolbar from "@material-ui/core/Toolbar"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 
-import FloatingLightDarkFab from "../FloatingLightDarkFab/FloatingLightDarkFab"
+import FloatingLightDarkFab from "./FloatingLightDarkFab"
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
