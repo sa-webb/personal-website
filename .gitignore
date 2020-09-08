@@ -70,5 +70,8 @@ yarn-error.log
 
 src/temp
 
-content/blog/computing
-content/blog/learning
+resources.txt
+
+/content/blog/computing/
+/content/blog/heuristics/
+/content/blog/tutorials/
