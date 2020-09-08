@@ -55,10 +55,22 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
+    const slug = value.replace("/post/", "").replace(/\/$/, "")
+    const url = `/post${slug}`
+
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: url,
     })
+  }
+}
+
+// Client-side routing for Blogs
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions
+  if (page.path.match(/^\/blog\//)) {
+    page.matchPath = `/blog/*`
+    createPage(page)
   }
 }

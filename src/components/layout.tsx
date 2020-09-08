@@ -1,11 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import FloatingLightDarkFab from "./Blog/FloatingLightDarkFab"
 import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
-  let header
+
+  let header: {}
 
   if (location.pathname === rootPath) {
     header = (
@@ -29,31 +31,44 @@ const Layout = ({ location, title, children }) => {
     )
   } else {
     header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
+      <>
+        <div
           style={{
-            boxShadow: `none`,
-            color: `inherit`,
+            display: "grid",
+            gridRowGap: `5px`,
+            gridTemplateColumns: `5fr 1fr`,
+            alignContent: "center",
+            flexDirection: "row",
           }}
-          to={`/`}
         >
-          {title}
-        </Link>
-      </h3>
+          <div>
+            <h3
+              style={{
+                fontFamily: `Montserrat, sans-serif`,
+                marginTop: 0,
+              }}
+            >
+              <Link
+                style={{
+                  boxShadow: `none`,
+                  color: `inherit`,
+                }}
+                to={`/`}
+              >
+                {title}
+              </Link>
+            </h3>
+          </div>
+          <div style={{ alignItems: "end" }}>
+            <FloatingLightDarkFab />
+          </div>
+        </div>
+      </>
     )
   }
   return (
     <div
       style={{
-        width: "100%",
-        height: "100vh",
-        backgroundColor: `#5018b6`,
-        color: `#fff`,
         marginLeft: `auto`,
         marginRight: `auto`,
         maxWidth: rhythm(24),
@@ -63,9 +78,9 @@ const Layout = ({ location, title, children }) => {
       <header>{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built with
+        © {new Date().getFullYear()}
         {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        sa-webb
       </footer>
     </div>
   )

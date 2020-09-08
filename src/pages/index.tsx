@@ -1,14 +1,14 @@
 import React from "react"
 import { PageProps, graphql } from "gatsby"
 import Img, { FluidObject } from "gatsby-image"
-import { LinkedinIcon, EmailIcon } from "react-share"
+import { LinkedinIcon } from "react-share"
 
 import Header from "../layout/Header"
 import Footer from "../layout/Footer"
 import SEO from "../components/seo"
 
-import GitHubIcon from "../components/github"
-import AdobeIcon from "../components/adobe"
+import GitHubIcon from "../components/icons/github"
+import AdobeIcon from "../components/icons/adobe"
 import ParticlesBG from "../components/particles"
 
 import Link from "@material-ui/core/Link"
@@ -16,25 +16,24 @@ import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import { Grid, CardActionArea, Card, Typography } from "@material-ui/core"
 
-import pdf from '../../static/AustinWebb_Resume.pdf'
+import pdf from "../../static/AustinWebb_Resume.pdf"
 
 type DataProps = {
   site: {
     siteMetadata: {
       title: string
+      author: {
+        name: string
+        profession: string
+        degree: string
+        major: string
+        minor: string
+      }
     }
   }
-  markdownRemark: {
-    frontmatter: {
-      title: string
-      degree: string
-      email: string
-      number: string
-      featuredImage: {
-        childImageSharp: {
-          fluid: FluidObject
-        }
-      }
+  icon: {
+    childImageSharp: {
+      fluid: FluidObject
     }
   }
 }
@@ -79,23 +78,20 @@ const useStyles = makeStyles(theme => ({
 const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
   const classes = useStyles()
 
-  const { markdownRemark } = data
-  const { frontmatter } = markdownRemark
+  const { author } = data.site.siteMetadata
 
   return (
     <>
       <SEO title="Profile" />
       <ParticlesBG />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.author.name} />
       <main>
         <Container maxWidth="md" className={classes.root}>
           <Grid container spacing={0}>
             <Grid item xs={12} sm={6} md={6}>
               <CardActionArea component="a">
                 <Card className={classes.card}>
-                  <Img
-                    fluid={frontmatter.featuredImage.childImageSharp.fluid}
-                  />
+                  <Img fluid={data.icon.childImageSharp.fluid} />
                 </Card>
               </CardActionArea>
             </Grid>
@@ -113,14 +109,14 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
               className={classes.opac}
             >
               <Typography
-                component="h1"
+                component="p"
                 variant="h4"
                 align="center"
                 gutterBottom
                 className={classes.textColor}
               >
                 {" "}
-                {frontmatter.title}
+                {author.profession}
               </Typography>
               <Typography
                 variant="h5"
@@ -129,25 +125,25 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
                 gutterBottom
                 className={classes.textColor}
               >
-                {frontmatter.degree}
+                {author.degree}
               </Typography>
               <Typography
-                variant="h5"
+                variant="h6"
                 align="center"
                 className={classes.textColor}
                 component="p"
                 gutterBottom
               >
-                {frontmatter.email}
+                Major: {author.major}
               </Typography>
               <Typography
-                variant="h5"
+                variant="h6"
                 align="center"
                 className={classes.textColor}
                 component="p"
                 gutterBottom
               >
-                {frontmatter.number}
+                Minor: {author.minor}
               </Typography>
               <Grid
                 container
@@ -158,7 +154,10 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
                 spacing={4}
               >
                 <Grid item md={2} xs={3}>
-                  <Link href="https://www.linkedin.com/in/steven-austin-webb/" target="_blank">
+                  <Link
+                    href="https://www.linkedin.com/in/steven-austin-webb/"
+                    target="_blank"
+                  >
                     <LinkedinIcon size={70} round={true} />
                   </Link>
                 </Grid>
@@ -179,7 +178,9 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
           </Grid>
         </Container>
       </main>
+      <footer>
       <Footer />
+      </footer>
     </>
   )
 }
@@ -187,24 +188,14 @@ const TestPage: React.FC<PageProps<DataProps>> = ({ data, path, location }) => {
 export default TestPage
 
 export const testQuery = graphql`
-  query TestQuery {
+  query IndexQuery {
     site {
-      siteMetadata {
-        title
-      }
+      ...AuthorFragment
     }
-    markdownRemark(fileAbsolutePath: { regex: "/bio/" }) {
-      frontmatter {
-        title
-        degree
-        email
-        number
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 530, maxHeight: 600) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+    icon: file(absolutePath: { regex: "/profile_pic.jpg/" }) {
+      childImageSharp {
+        fluid(maxWidth: 530, maxHeight: 600) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

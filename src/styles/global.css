@@ -1,0 +1,15 @@
+a {
+	color: #ef5350;
+	box-shadow: inset 0px -1px 0px 0px #ef5350;
+	text-decoration: none;
+}
+
+.ssr-dark {
+	background: #282828;
+	color: #fff;
+}
+
+.ssr-light {
+	background: #fafafa;
+	color: #000000;
+}

@@ -1,17 +1,27 @@
+require("dotenv").config()
+
+const config = require("./config/")
+
 module.exports = {
   siteMetadata: {
-    title: `Austin Webb`,
+    title: config.title,
     author: {
-      name: `sa-webb`,
-      summary: `Software engineer specializing in web technologies.`,
+      name: config.author.name,
+      degree: config.author.degree,
+      major: config.author.major,
+      minor: config.author.minor,
+      profession: config.author.profession,
+      summary: config.author.summary,
+      description: config.description,
     },
-    description: `My personal website built with Gatsby.js`,
-    siteUrl: `https://sa-webb.dev`,
+    description: config.description,
+    siteUrl: config.siteUrl,
     social: {
-      twitter: `kylemathews`,
+      spectrum: config.social.spectrum,
     },
   },
   plugins: [
+    `gatsby-plugin-top-layout`,
     `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -28,20 +38,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/bio`,
-        name: `bio`,
-      },
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 630, // (origin was 590)
             },
           },
           {
@@ -83,8 +86,21 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
+    {
+      resolve: "gatsby-plugin-ts",
+      options: {
+        tsLoader: {
+          logLevel: "warn",
+        },
+        forkTsCheckerPlugin: {
+          eslint: true,
+        },
+        fileName: `types/graphql-types.ts`,
+        codegen: true,
+        codegenDelay: 250,
+        typeCheck: process.env.NODE_ENV !== "production",
+      },
+    },
     // `gatsby-plugin-offline`,
   ],
 }
