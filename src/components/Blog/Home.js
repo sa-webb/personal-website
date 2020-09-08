@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     justify: "center",
     alignItems: "center",
-    alignContent: "center"
+    alignContent: "center",
   },
 }))
 
@@ -29,22 +29,30 @@ const HomePosts = () => {
           }
         }
       `}
-      render={data => (
-        <Container maxWidth="lg" className={classes.root}>
-          <Grid
-            container
-            spacing={2}
-            direction="row"
-            alignItems="center"
-            alignContent="center"
-            justify="center"
-          >
-            {data.allMarkdownRemark.edges.map(({ node }) => (
-              <BlogCard key={node.id} data={node} />
-            ))}
-          </Grid>
-        </Container>
-      )}
+      render={data => {
+        const posts = data.allMarkdownRemark.edges
+        console.log(data.allMarkdownRemark)
+        if (posts.length === 0) {
+          return <p>No posts available</p>
+        } else {
+          return (
+            <Container maxWidth="lg" className={classes.root}>
+              <Grid
+                container
+                spacing={2}
+                direction="row"
+                alignItems="center"
+                alignContent="center"
+                justify="center"
+              >
+                {data.allMarkdownRemark.edges.map(({ node }) => (
+                  <BlogCard key={node.id} data={node} />
+                ))}
+              </Grid>
+            </Container>
+          )
+        }
+      }}
     />
   )
 }
