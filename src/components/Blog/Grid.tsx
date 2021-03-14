@@ -8,25 +8,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     padding: theme.spacing(2),
     backgroundColor: `pink`
-  },
-  // root: {
-  //   [theme.breakpoints.down("sm")]: {
-  //     flexGrow: 1,
-  //     padding: theme.spacing(2),
-  //   },
-  //   [theme.breakpoints.up("md")]: {
-  //     flexGrow: 1,
-  //     padding: theme.spacing(2),
-  //   },
-  //   [theme.breakpoints.up("lg")]: {
-  //     flexGrow: 1,
-  //     padding: theme.spacing(2),
-  //   },
-  //   [theme.breakpoints.up("xl")]: {
-  //     flexGrow: 1,
-  //     padding: theme.spacing(2),
-  //   },
-  // },
+  }
 }))
 
 const BlogGrid = ({ children }) => {

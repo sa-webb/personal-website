@@ -5,7 +5,7 @@ import Container from "@material-ui/core/Container"
 import Grid from "@material-ui/core/Grid"
 import { makeStyles } from "@material-ui/core/styles"
 
-import BlogCard from "./Card"
+import BlogCard from "./BlogCard"
 
 const useStyles = makeStyles(theme => ({
   root: {

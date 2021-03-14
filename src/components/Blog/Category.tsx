@@ -1,10 +1,11 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
+
 import Container from "@material-ui/core/Container"
 import Grid from "@material-ui/core/Grid"
 import { makeStyles } from "@material-ui/core/styles"
 
-import BlogCard from "./Card"
+import BlogCard from "./BlogCard"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,14 +17,14 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Learning = () => {
+const Category = () => {
   const classes = useStyles()
   return (
     <StaticQuery
       query={graphql`
-        query LearningQuery {
+        query CategoryQuery {
           allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/blog/heuristics/" } }
+            filter: { fileAbsolutePath: { regex: "/blog/computing/" } }
             sort: { fields: [frontmatter___date], order: DESC }
           ) {
             ...CategoryFragment
@@ -58,4 +59,4 @@ const Learning = () => {
   )
 }
 
-export default Learning
+export default Category
