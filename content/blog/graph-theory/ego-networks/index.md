@@ -2,7 +2,7 @@
 title: Ego Networks
 date: "2020-12-06T08:12:03.284Z"
 description: "The technologies powering this website."
-featuredImage: "./gatsby-logo.png"
+featuredImage: "./ego-networks.png"
 ---
 
 # Ego Networks
