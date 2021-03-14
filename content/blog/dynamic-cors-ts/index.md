@@ -1,3 +1,10 @@
+---
+title: Dynamic CORS with TypeScript
+date: "2020-08-01T22:12:03.284Z"
+description: "The technologies powering this website."
+featuredImage: "./react.png"
+---
+
 # Dynamic CORS with Apollo Server in TypeScript
 
 Software engineers work with numerous tools and services that need access to the server across in development, testing, and production environments. Because of this configuring proper access to a server is a critical and arduous process. In this article we take a deep dive at how to configure Cross-Origin Resource or CORS policies using the Apollo Server framework. 
